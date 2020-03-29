@@ -1,0 +1,32 @@
+[rewrite_local]
+#
+# 网易漫画去开屏广告
+^https://api-163.biliapi.net/cover url reject-img
+#
+# 人人视频（加上了看电影的解锁）
+^https:\/\/api\.rr\.tv(\/user\/privilege\/list|\/ad\/getAll|\/rrtv-video\/v4plus\/season\/detail) url script-response-body rrtv.js
+#
+# 什么值得买去社区文章信息流广告
+^https://article-api.smzdm.com/article/index_home_page url script-response-body smzdm.js
+#
+# 联通营业厅 去轮播广告 (By Wangsc1)
+^https?://m.client.10010.com/uniAdmsInterface/getHomePageAd url script-response-body china_unicom.js
+#
+# 携程签到获取cookie
+;https:\/\/m\.ctrip\.com\/restapi\/soa2\/14946\/json\/userBaseInfo url script-request-header ctrip_cookie.js
+#
+# 联通签到，注意获取Cookie有两条脚本
+;^https:\/\/act.10010.com\/SigninApp\/signin\/querySigninActivity.htm url script-request-header chavyleung/10010/10010.cookie.js
+;^https:\/\/act.10010.com\/SigninApp(.*?)\/signin\/daySign.do url script-request-header chavyleung/10010/10010.cookie.js
+#
+# 京东历史价格
+^https?://api\.m\.jd\.com/client\.action\?functionId=(wareBusiness|serverConfig) url script-response-body yichahucha/jd_price.js
+#
+# 淘宝历史价格
+^https?://amdc\.m\.taobao\.com/amdc/mobileDispatch url script-response-body yichahucha/tb_price.js
+^https://trade-acs\.m\.taobao\.com/gw/mtop\.taobao\.detail\.getdetail url script-response-body yichahucha/tb_price.js
+#
+# 微博去广告
+^https?://(sdk|wb)app\.uve\.weibo\.com(/interface/sdk/sdkad.php|/wbapplua/wbpullad.lua) url script-response-body yichahucha/wb_launch.js
+;^https?://m?api\.weibo\.c(n|om)/2/(statuses/(unread|extend|positives/get|(friends|video)(/|_)(mix)?timeline)|stories/(video_stream|home_list)|(groups|fangle)/timeline|profile/statuses|comments/build_comments|photo/recommend_list|service/picfeed|searchall|cardlist|page|!/photos/pic_recommend_status) url script-response-body yichahucha/wb_ad.js
+#
