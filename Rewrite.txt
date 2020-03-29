@@ -14,7 +14,7 @@ hostname = *.googlevideo.com, api.rr.tv, article-api.smzdm.com, m.ctrip.com, act
 ^https?://m.client.10010.com/uniAdmsInterface/getHomePageAd url script-response-body china_unicom.js
 #
 # 携程签到获取cookie
-https:\/\/m\.ctrip\.com\/restapi\/soa2\/14946\/json\/userBaseInfo url script-request-header ctrip_cookie.js
+;https:\/\/m\.ctrip\.com\/restapi\/soa2\/14946\/json\/userBaseInfo url script-request-header ctrip_cookie.js
 #
 # 联通签到，注意获取Cookie有两条脚本
 ;^https:\/\/act.10010.com\/SigninApp\/signin\/querySigninActivity.htm url script-request-header chavyleung/10010/10010.cookie.js
