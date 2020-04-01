@@ -1,6 +1,6 @@
 # update 2020.3.30
 #
-hostname = *.googlevideo.com, api.rr.tv, article-api.smzdm.com, m.ctrip.com, act.10010.com, api.m.jd.com, trade-acs.m.taobao.com, amdc.m.taobao.com, i.meituan.com, group.baicizhan.com, sf-integral-sign-in.weixinjia.net, 
+hostname = *.googlevideo.com, api.rr.tv, article-api.smzdm.com, m.ctrip.com, act.10010.com, api.m.jd.com, trade-acs.m.taobao.com, amdc.m.taobao.com, i.meituan.com, group.baicizhan.com, sf-integral-sign-in.weixinjia.net, mcs-mimp-web.sf-express.com, 
 #
 # 网易漫画去开屏广告
 ^https://api-163.biliapi.net/cover url reject-img
