@@ -1,9 +1,6 @@
 # update 2020.4.18
 #
-hostname = *.googlevideo.com, api.rr.tv, article-api.smzdm.com, m.ctrip.com, act.10010.com, api.m.jd.com, trade-acs.m.taobao.com, amdc.m.taobao.com, i.meituan.com, group.baicizhan.com, sf-integral-sign-in.weixinjia.net, mcs-mimp-web.sf-express.com, 
-#
-# 网易漫画去开屏广告
-^https://api-163.biliapi.net/cover url reject-img
+hostname = *.googlevideo.com, api.rr.tv, article-api.smzdm.com, m.ctrip.com, act.10010.com, api.m.jd.com, trade-acs.m.taobao.com, i.meituan.com, sf-integral-sign-in.weixinjia.net,  
 #
 # 人人视频（加上了看电影的解锁）
 ^https:\/\/api\.rr\.tv(\/user\/privilege\/list|\/ad\/getAll|\/rrtv-video\/v4plus\/season\/detail) url script-response-body rrtv.js
@@ -21,8 +18,8 @@ hostname = *.googlevideo.com, api.rr.tv, article-api.smzdm.com, m.ctrip.com, act
 ^https?://api\.m\.jd\.com/client\.action\?functionId=(wareBusiness|serverConfig) url script-response-body yichahucha/jd_price.js
 #
 # 淘宝历史价格
-^https?://amdc\.m\.taobao\.com/amdc/mobileDispatch url script-response-body yichahucha/tb_price.js
-^https://trade-acs\.m\.taobao\.com/gw/mtop\.taobao\.detail\.getdetail url script-response-body yichahucha/tb_price.js
+^http://.+/amdc/mobileDispatch url script-request-body yichahucha/tb_price.js
+^https?://trade-acs\.m\.taobao\.com/gw/mtop\.taobao\.detail\.getdetail url script-response-body yichahucha/tb_price.js
 #
 # 去微博应用内广告 (By yichahucha)
 # ^https?://(sdk|wb)app\.uve\.weibo\.com(/interface/sdk/sdkad.php|/wbapplua/wbpullad.lua) url script-response-body yichahucha/wb_launch.js
